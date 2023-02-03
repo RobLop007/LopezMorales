@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 1px;
+    padding: 1px;
+}
+h1{
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.caja{
+    border: 2px solid rgb(5, 5, 185);   
+    display: inline-block;
+}
+
+#caja1{
+    display: block;
+}
+
+#caja2{
+    background-color: lightcoral;
+}
+
+#caja3,#caja4{
+    display: inline;
+    background-color: rgb(171, 117, 221);
+}
+
+#caja4{
+    font-size: xx-large;
+    display: block;
+}
+
