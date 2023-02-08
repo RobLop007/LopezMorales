@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    margin: 1px;
+    padding: 1px;
+}
+
+.caja{
+    background-color: blue;
+    color: yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    width: 300px;
+    height: 250px;
+}
+
+#caja1{
+    position: static;
+    color: white;
+}
+
+#caja2{
+    position: relative;
+    left: 50px;
+}
+
+#caja3{
+    position: relative;
+}
+
+#caja4{
+    position: absolute;
+    background-color: blueviolet;
+    width: 100px;
+    height: 75px;
+}
+#caja5{
+    position: fixed;
+    top: 50px;
+    right: 100px;
+    background-color: rgb(130, 130, 228);
+}
+#caja6{
+    position: relative;
+    background-color: gray;
+}
+#caja7{
+    position: sticky;
+    background-color: gold;
+    top: 5px;
+    z-index: 1;
+}
+
+
