@@ -52,10 +52,19 @@ tbody{
 }
 
 tbody td:hover{
-    background-color: rgb(205, 31, 31);
+    background-color: red;
 }
 
-.hora{
+th:hover{
+    background-color: rgb(10, 231, 10);
+}
+
+th.hora{
+    background-color: blue;
+    color: white;
+}
+
+th.hora:hover{
     background-color: blue;
     color: white;
 }
