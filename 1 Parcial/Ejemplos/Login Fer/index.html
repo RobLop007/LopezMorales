@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Login</title>
+</head>
+<body>
+    <main class="main">
+        <form class="main__form form">
+            <div class="form__titulo titulo">
+                <h2>Bienvenido de vuelta!</h2>
+                <p>Ingresa tus datos</p>
+            </div>
+            <div class="form__input input">
+                <!-- Correo -->
+                <div class="form__correo">
+                    <label for="correo">Correo electronico</label>
+                    <input type="text" name="correo" id="correo" placeholder="ejemplo@gmail.com">
+                </div>
+                <!-- Contraseña -->
+                <div class="form__contraseña">
+                    <label for="contraseña">Contraseña</label>
+                    <input type="text" name="contraseñaa" id="contraseña" placeholder="8 caracteres como minimo">
+                </div>
+                <p><a>Olvide mi contraseña</a></p>
+                <button id="btnInicio">Iniciar sesión</button>
+                <button id="btnGoogle">Iniciar sesión con google</button>
+                <p>No tienes una cuenta? <a href="">Registrate</a></p>
+            </div>
+        </form>
+        <div class="main__bienvenida bienvenida">
+            <div class="bienvenida__filtro filtro">
+                <div class="filtro__caja caja">
+                    <h1>Descubre</h1>
+                    <h1>Oferta</h1>
+                    <h1 id="colecciona">Colecciona</h1>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
