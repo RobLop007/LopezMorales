@@ -11,20 +11,24 @@
     display: grid;
     grid-template-columns: 150px 150px 150px;
     grid-template-rows: 150px 150px 150px;
-    grid-template-areas: 'encabezado encabezado encabezado'
-                         'izquierad centro derecha'
-                         'pie pie pie';
     justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
 }
 
-.caja{    
+.caja{
+    width: 100px;
+    height: 100px;
     background-color: white;
-    text-align: center;
-    border: 2px solid green;
 }
 
+#caja1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: start;
+}
 
-
+#caja2{
+    align-self: end;
+}
