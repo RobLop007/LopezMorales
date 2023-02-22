@@ -7,10 +7,12 @@
 #contenedor{
     width: 100vw;
     height: 100vh;
-    background-color: green;
     display: grid;
-    grid-template-columns: 150px 150px 150px;
-    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 33.5% 33% 33.5%;
+    grid-template-rows: 30% 50% 20%;
+    grid-template-areas: 'encabezado encabezado encabezado'
+                         'nav1 nav2 nav3'
+                          'pie pie pie';
     justify-content: center;
     align-content: center;
     justify-items: center;
@@ -18,17 +20,26 @@
 }
 
 .caja{
-    width: 100px;
-    height: 100px;
-    background-color: white;
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    border: 2px solid green;
+}
+
+#encabezado{
+    grid-area: encabezado;
 }
 
 #caja1{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    justify-self: start;
+    grid-area: nav1;
+}
+#caja2{
+    grid-area: nav2;
+}
+#caja3{
+    grid-area: nav3;
 }
 
-#caja2{
-    align-self: end;
+#pie{
+    grid-area: pie;
 }

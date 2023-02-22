@@ -11,9 +11,6 @@
     display: grid;
     grid-template-columns: 150px 150px 150px;
     grid-template-rows: 150px 150px 150px;
-    grid-template-areas: 'encabezado encabezado encabezado'
-                         'izquierad centro derecha'
-                         'pie pie pie';
     justify-content: center;
     align-content: center;
     justify-items: center;
@@ -21,6 +18,8 @@
 }
 
 .caja{    
+    width: 100px;
+    height: 100px;
     background-color: white;
     text-align: center;
     border: 2px solid green;
