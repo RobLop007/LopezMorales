@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+    margin: 3px;
+    padding: 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html,body{
+    width: 99%;
+    height: 100%;
+}
+
+#contenedor{
+    display: ;
+    width: 100%;
+    height: 200px;
+}
+
+#imagen{
+    width: 50%;
+    height: 100%;
+}
+
+img{
+    height: 100%;
+}
+
+#encabezado{
+    text-align: end;
+    width: 50%;
+}
+
+table{ 
+    border: 2px solid blue;
+    width: 100%;
+}
+
+thead{
+    background-color: blue;
+    color: white;
+}
+
+tbody{
+    text-align: center;
+}
+
+.par{
+    background-color: lightgray;
+}
+
+tbody td:hover{
+    background-color: red;
+}
+
+th:hover{
+    background-color: rgb(10, 231, 10);
+}
+
+.hora{
+    background-color: blue;
+    color: white;
+}
+
+th.hora:hover{
+    background-color: blue;
+    color: white;
+}
+
+@media screen and (max-width:500px) {
+        table,thead,tbody,tr,th,td{
+            display: block;
+        }
+        thead tr{ display: none;}
+        tbody td {padding-left: 50%;}
+        td::before{
+            position: absolute;
+            left: 50px;
+        }
+        td:nth-of-type(1)::before{content: "Lunes";}
+        td:nth-of-type(2)::before{content: "Martes";}
+        td:nth-of-type(3)::before{content: "Miercoles";}
+        td:nth-of-type(4)::before{content: "Jueves";}
+        td:nth-of-type(5)::before{content: "Viernes";}
+}
