@@ -24,18 +24,7 @@
     line-height: 2em;
 }
 
-.cont__encabezado{
-    width: 75%;
-    text-align: right;
-    margin: 15px;
-}
-
-.cont__texto{
-    margin: 15px;
-    text-align: justify;
-}
-
-.cont__tabbla{
+.cont__tabla{
     border: 1px solid #B4BBC8;
     background-color: #f9f9f9;
     color: #000;
@@ -49,17 +38,34 @@
 }
 
 .tabla__cabecera{
-    font-size: 140%;
-    font-weight: bolder;
-    height: 45px;
-    line-height: 1.2em;
+    font-size: x-large;
     text-align: center;
-    vertical-align: middle;
 }
 
-.cont__imagen{
-    max-width: 100%;
-    margin: 0 auto;
+.tabla__imagen{
+    width: 100%;
+    margin: 0;
+}
+
+.imagen__pie{
+    text-align: center;
+}
+
+.tabla__subtitulo{
+    text-align: center;
+    background-color: lightgray;
+    font-weight: bold;
+}
+
+.cont__encabezado{
+    width: 75%;
+    text-align: right;
+    margin: 15px;
+}
+
+.cont__texto{
+    margin: 5px;
+    text-align: justify;
 }
 
 a:hover{
