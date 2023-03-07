@@ -34,12 +34,31 @@
 
 #caja1{
     grid-area: nav1;
+    transform: rotate(2deg);
+    transform-origin: bottom left;
 }
 #caja2{
     grid-area: nav2;
 }
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 #caja3{
     grid-area: nav3;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #pie{
@@ -50,5 +69,5 @@
   transition-property: background-color, color, left;
   transition-duration: 5s;
   background-color: green;
-  color: black;
+  color: white;
 }
