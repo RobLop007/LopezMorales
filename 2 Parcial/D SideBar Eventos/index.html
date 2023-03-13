@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Layout Eventos</title>
+</head>
+<body>
+    <div id="contenedor">
+        <div class="caja" id="encabezado">Encabezado</div>
+        <div class="caja" id="caja1">Caja 1
+            <p>The Caterpillar and Alice looked at each other for some time in silence: at last the Caterpillar took the hookah out of its mouth, and addressed her in a languid, sleepy voice.</p>
+        </div>
+        <div class="caja" id="caja2">Caja 2
+            <p>The Caterpillar and Alice looked at each other for some time in silence: at last the Caterpillar took the hookah out of its mouth, and addressed her in a languid, sleepy voice.</p>
+        </div>
+        <div class="caja" id="caja3">Caja 3</div>
+        <div class="caja" id="pie">Pie de pagina</div>
+    </div>
+
+    <script>
+        window.onload  = function(){
+            
+            //Metodo 1
+            document.getElementById("caja1").onclick=function(){alert("Click en caja 1")};
+        }
+    </script>
+</body>
+</html>

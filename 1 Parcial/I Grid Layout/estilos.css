@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#contenedor{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 33.5% 33% 33.5%;
+    grid-template-rows: 30% 50% 20%;
+    grid-template-areas: 'encabezado encabezado encabezado'
+                         'nav1 nav2 nav3'
+                          'pie pie pie';
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.caja{
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    border: 2px solid green;
+    text-align: center;
+    color: blue;
+}
+
+#encabezado{
+    grid-area: encabezado;
+}
+
+#caja1{
+    grid-area: nav1;
+    transform: rotate(2deg);
+    transform-origin: bottom left;
+}
+#caja2{
+    grid-area: nav2;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+#caja3{
+    grid-area: nav3;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#pie{
+    grid-area: pie;
+}
+
+.caja:hover{
+  transition-property: background-color, color, left;
+  transition-duration: 5s;
+  background-color: green;
+  color: white;
+}
