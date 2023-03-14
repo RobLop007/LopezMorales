@@ -24,18 +24,19 @@
     <script>
         window.onload  = function(){
             
-            //Metodo 1
+            //Metodo 
             document.getElementById("caja1").onclick=function(){alert("Click en caja 1")};
 
-            //Metodo 2
-            var caja = document.getElementById("caja2");
-            caja.classList.toggle("claseNueva");
-
-            //Metodo3
-            var caja = document.getElementById("pie");
-            caja.style.backgroundColor = "gray";
-            caja.style.fontSize = "24px";
-
+            //Metdo 
+            document.getElementById("caja2").onclick=function(){ 
+                document.getElementById("caja2").classList.toggle("cajaDife");
+                alert("cambio de background");
+            }
+        
+            //Metodo
+            document.getElementById("pie").addEventListener("click",() => {
+            alert("click en piepagina")
+            });    
         }
     </script>
 </body>
