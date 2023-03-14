@@ -1,73 +1,106 @@
 *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-#contenedor{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 33.5% 33% 33.5%;
-    grid-template-rows: 30% 50% 20%;
-    grid-template-areas: 'encabezado encabezado encabezado'
-                         'nav1 nav2 nav3'
-                          'pie pie pie';
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
+
+/* sin esto no se va a ver en toda la pagina, no se veria el contenido */
+html, body{
+  width: 100vw;
+  height: 100vh;
 }
 
-.caja{
-    width: 100%;
-    height: 100%;
-    background-color: yellow;
-    border: 2px solid green;
-    text-align: center;
-    color: blue;
+.contenedor{
+  width: 100%;
+  height: 100%;
+  background-color: gray;
 }
 
-#encabezado{
-    grid-area: encabezado;
+.menu{
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-color: black;
+  
 }
 
-#caja1{
-    grid-area: nav1;
-    transform: rotate(2deg);
-    transform-origin: bottom left;
-}
-#caja2{
-    grid-area: nav2;
+.contenido{
+  position: relative;
+  margin-left: 300px;
+  height: 100%;
+  background-color: white;
 }
 
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%
-  }
+.menuEscondido{
+  width: 0;
 
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
 }
 
-#caja3{
-    grid-area: nav3;
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+.contenidoEscondido{
+  margin-left: 0;
 }
 
-#pie{
-    grid-area: pie;
+
+/* ACORDEON */
+ul{
+  width: 300px;
+  list-style-type: none;
+  text-align: center;
 }
 
-.caja:hover{
-  transition-property: background-color, color, left;
-  transition-duration: 5s;
-  background-color: green;
+li{
+  width: 300px;
+  display: flex;
+  text-align: right;
+}
+
+img{
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+}
+
+.imgEquipo{
+  width: 200px;
+  height: 45%;
+}
+
+.opcPilotos{
+  background-color: red;
+  color: white;
+}
+
+.opcPilotos > li{
+  display: none;
+} 
+
+.opcPilotos:hover > li{
+  display: block;
+  border: 2px solid black;
+}
+
+.opcEquipos{
+  background-color: red;
+  color: white;
+}
+
+.opcEquipos > li{
+  display: none;
+} 
+
+.opcEquipos:hover > li{
+  display: block;
+}
+
+
+.opcHijo{
+  background-color: white;
+  color: black;
+}
+
+.opcHijo:hover{
+  width: 165px;
+  background-color: red;
   color: white;
 }
