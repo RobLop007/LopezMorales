@@ -9,12 +9,22 @@
 
 // }
 
-$(document).ready(function(){
+// $(function(){
     
-    $("#btnAct").click(function(){
-        console.log("Click en boton");
+//     $("#btnAct").click(function(){
         
+//         console.log("Click opc1");
+//         $("#miMenu").toggleClass("menuEscondido");
+//         $("#miContenido").toggleClass("contenidoEscondido");
+//     });
+// });
+
+
+$(function(){
+    $("#btnAct").on("click",function(){
+        
+        console.log("Click mas actualizado");
         $("#miMenu").toggleClass("menuEscondido");
-        $("#miContenido").toggleClass("contenidoEscondido");
+        $("#miContenido").toggleClass("contenidoEscondido");        
     });
 });
