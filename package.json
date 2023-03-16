@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "excel": "^1.0.1"
+    "excel": "^1.0.1",
+    "jquery": "^3.6.4"
   }
 }
