@@ -1,85 +1,90 @@
-window.onload = function() {
+window.onload = function () {
+  encabezados = ["Hora", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+  datos = [
+    {
+      hora: "7-8",
+      lunes: "Programacion web",
+      martes: "Programacion web",
+      miercoles: "Programacion web",
+      jueves: "Programacion web",
+      viernes: "Programacion web",
+    },
+    {
+      hora: "8-9",
+      lunes: "",
+      martes: "Taller de Sistemas operativos",
+      miercoles: "",
+      jueves: "Taller de Sistemas operativos",
+      viernes: "",
+    },
+    {
+      hora: "9-10",
+      lunes: "",
+      martes: "Taller de Sistemas operativos",
+      miercoles: "",
+      jueves: "Taller de Sistemas operativos",
+      viernes: "",
+    },
+    {
+      hora: "10-11",
+      lunes: "",
+      martes: "Arquitectura de computadoras",
+      miercoles: "",
+      jueves: "Arquitectura de computadoras",
+      viernes: "",
+    },
+    {
+      hora: "11-12",
+      lunes: "",
+      martes: "Arquitectura de computadoras",
+      miercoles: "",
+      jueves: "Arquitectura de computadoras",
+      viernes: "",
+    },
+    {
+      hora: "12-1",
+      lunes: "",
+      martes: "",
+      miercoles: "",
+      jueves: "",
+      viernes: "",
+    },
+    {
+      hora: "1-2",
+      lunes: "Graficacion",
+      martes: "Graficacion",
+      miercoles: "Graficacion",
+      jueves: "Graficacion",
+      viernes: "Graficacion",
+    },
+  ];
 
-    encabezados = ["Hora", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
-    datos7am = [{  hora: "7-8",
-                lunes: "Programacion web",
-                martes: "Programacion web",
-                miercoles: "Programacion web",
-                jueves: "Programacion web",
-                viernes: "Programacion web"
-    }]
-    datos8am = [{  hora: "8-9",
-                lunes: "",
-                martes: "Taller de Sistemas operativos",
-                miercoles: "",
-                jueves: "Taller de Sistemas operativos",
-                viernes: ""
-    }]
+  let table = document.createElement("table");
+  let thead = document.createElement("thead");
+  let tr = document.createElement("tr");
+  let tbody = document.createElement("tbody");
 
-    let table = document.createElement('table');
-    let thead = document.createElement('thead');
-    let tr = document.createElement('tr');
-    let tbody = document.createElement('tbody');
+  encabezados.forEach((item) => {
+    let th = document.createElement("th");
+    th.innerText = item;
+    tr.appendChild(th);
+  });
 
-    
-    encabezados.forEach(function(item) {
-        let th = document.createElement("th");
-        th.innerText = item;
-        tr.appendChild(th);
+  datos.forEach((item) => {
+    let tr = document.createElement("tr");
+    let th = document.createElement("th");
+    Object.values(item).forEach((item) => {
+      let td = document.createElement("td");
+      td.innerText = item;
+      tr.appendChild(td);
     });
+    tr.appendChild(th);
+    tbody.appendChild(tr);
+  });
 
-    datos7am.forEach(function(item){
-        let tr = document.createElement("tr");
-        let th = document.createElement("th");
-        th.innerText = item.hora;
-        let td2 = document.createElement("td");
-        td2.innerText = item.lunes;
-        let td3 = document.createElement("td");
-        td3.innerText = item.martes;
-        let td4 = document.createElement("td");
-        td4.innerText = item.miercoles;
-        let td5 = document.createElement("td");
-        td5.innerText = item.jueves;
-        let td6 = document.createElement("td");
-        td6.innerText = item.viernes;
+  thead.appendChild(tr);
+  table.appendChild(thead);
+  table.appendChild(tbody);
 
-        tr.appendChild(th);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        tr.appendChild(td4);
-        tr.appendChild(td5);
-        tr.appendChild(td6);
-        tbody.appendChild(tr);
-    });
-
-    datos8am.forEach(function(item){
-        let tr = document.createElement("tr");
-        let th = document.createElement("th");
-        th.innerText = item.hora;
-        let td2 = document.createElement("td");
-        td2.innerText = item.lunes;
-        let td3 = document.createElement("td");
-        td3.innerText = item.martes;
-        let td4 = document.createElement("td");
-        td4.innerText = item.miercoles;
-        let td5 = document.createElement("td");
-        td5.innerText = item.jueves;
-        let td6 = document.createElement("td");
-        td6.innerText = item.viernes;
-
-        tr.appendChild(th);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        tr.appendChild(td4);
-        tr.appendChild(td5);
-        tr.appendChild(td6);
-        tbody.appendChild(tr);
-    });
-    thead.appendChild(tr);
-    table.appendChild(thead);
-    table.appendChild(tbody);
-
-    document.getElementById('contenedor').appendChild(table);
-    console.table(datos);
-
-}
+  document.getElementById("contenedor").appendChild(table);
+};

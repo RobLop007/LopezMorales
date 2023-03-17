@@ -47,13 +47,13 @@ tbody{
     background-color: lightgray;
 }
 
-tbody td:hover{
+/* tbody td:hover{
     background-color: red;
 }
 
 .libre:hover{
     background-color: rgb(15, 253, 15);
-}
+} */
 
 .hora{
     background-color: blue;
