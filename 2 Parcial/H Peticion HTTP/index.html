@@ -4,27 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <title>Peticiones HTTP</title>
 </head>
 <body>
-    <button id="btnPet">Peticion</button>
+    <button id="XMLhttp">XMLhttp</button>
+    <button id="btnAjax">AJAX</button>
+    <button id="btnGET">GET</button>
+    <button id="btnJson">JSon</button>
     <div id="resultado">
         <img src="" alt="" id="foto">
     </div>
     <script>
+        // //Metodo XML
         window.onload=function(){
-            document.getElementById("btnPet").addEventListener("click",function(){
+            document.getElementById("XMLhttp").addEventListener("click",function(){
                     console.log("Click en boton");
                     let solicitud = new XMLHttpRequest();
                     solicitud.responseType='json';
                     solicitud.onload = function(){
                     console.log(solicitud.response.message);
                     document.getElementById("foto").src = solicitud.response.message;
-                }
+                 }
                 solicitud.open("GET","https://dog.ceo/api/breeds/image/random", true);
                 solicitud.send();
             })
         }
+        //Metoodo Ajax
+        $(document).ready(function(){
+            $("#btnAjax").click(function(){
+                $.ajax({
+                url: "https://dog.ceo/api/breeds/image/random"
+                })
+                .done(function( respuesta) {   
+                    console.log("Click en boton");                 
+                    console.log(respuesta);
+                    $("#foto").text(respuesta.message);
+                });
+            })
+        })
+
+        //Metodo GET
+        $("")
+
+
+
     </script>
 </body>
 </html>
