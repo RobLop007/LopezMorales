@@ -9,7 +9,7 @@
 <body>
     <button id="btnPet">Peticion</button>
     <div id="resultado">
-
+        <img src="" alt="" id="foto">
     </div>
     <script>
         window.onload=function(){
@@ -18,10 +18,10 @@
                     let solicitud = new XMLHttpRequest();
                     solicitud.responseType='json';
                     solicitud.onload = function(){
-                    console.log(solicitud.response);
-                    document.getElementById("resultado").innerText = solicitud.response.value;
+                    console.log(solicitud.response.message);
+                    document.getElementById("foto").src = solicitud.response.message;
                 }
-                solicitud.open("GET","https://api.chucknorris.io/jokes/random", true);
+                solicitud.open("GET","https://dog.ceo/api/breeds/image/random", true);
                 solicitud.send();
             })
         }
