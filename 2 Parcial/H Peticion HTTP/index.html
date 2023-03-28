@@ -25,7 +25,7 @@
                     solicitud.onload = function(){
                     console.log(solicitud.response.message);
                     document.getElementById("foto").src = solicitud.response.message;
-                 }
+                }
                 solicitud.open("GET","https://dog.ceo/api/breeds/image/random", true);
                 solicitud.send();
             })
@@ -40,7 +40,7 @@
                 .done(function( respuesta) {   
                     console.log("Click Ajax");                 
                     console.log(respuesta);
-                    $("#resultado").text(respuesta.message);
+                    $("#foto").attr('src',respuesta.message);
                 });
             })
             //Metodo GET
@@ -48,7 +48,7 @@
                 $.get("https://dog.ceo/api/breeds/image/random", function(respuesta){
                     console.log("Click GET");
                     console.log(respuesta);
-                    $("#resultado").text(respuesta.message);
+                    $("#foto").attr('src',respuesta.message);
                 })
             })
             //Metodo Json
@@ -56,7 +56,7 @@
                 $.getJSON("https://dog.ceo/api/breeds/image/random", function(respuesta){
                     console.log("Click Json");
                     console.log(respuesta);                    
-                    $("#resultado").text(respuesta.message);
+                    $("#foto").attr('src',respuesta.message);
                 })
             })
         })
