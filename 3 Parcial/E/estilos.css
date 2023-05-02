@@ -31,6 +31,24 @@
     margin-top: 30px;
 }
 
+.nombre__input{
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 2px solid rgba(128, 128, 128, 0.25);
+}
+.apellido__input{
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 2px solid rgba(128, 128, 128, 0.25);
+}
 .correo__input{
     width: 100%;
     height: 35px;
@@ -75,7 +93,7 @@ h5 > a{
     padding: 2px 1px 0;
 }
 
-#btnInicio{
+#btnEnviar{
     height: 100%;
     height: 35px;
     border-radius: 5px;

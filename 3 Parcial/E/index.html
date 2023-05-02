@@ -5,23 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+    
     <title>Document</title>
 </head>
 <body>
-    <form action="">
-        <h4>Registro</h4>
-        <div>
-            <label for="titulo">Titulo</label>
-            <input id="titulo" type="text" placeholder="Titulo">
-        </div>
-        <div>
-            <label for="body">Body</label>
-            <input id="body" type="text" placeholder="Body">
-        </div>
-        <div>
-            <label for="id">UserID</label>
-            <input id="id" type="text" placeholder="User123">
-        </div>
+    <main class="main">
+        <form class="main__form form">
+            <div class="form__titulo titulo">
+                <h2>Bienvenido!</h2>
+                <p>Ingresa tus datos</p>
+            </div>
+            <div class="form__input input">
+                <!-- Nombre -->
+                <div class="ingresar__correo correo">
+                    <label for="titulo">Titulo</label>
+                    <input class="correo__input input" type="text"  id="titulo" placeholder="Titulo1">
+                </div>
+                <!-- Correo -->
+                <div class="ingresar__correo correo">
+                    <label for="body">Cuerpo</label>
+                    <input class="correo__input input" type="text"  id="body" placeholder="Body">
+                </div>
+                <!-- Correo -->
+                <div class="ingresar__correo correo">
+                    <label for="userId">UserID</label>
+                    <input class="correo__input input" type="text"  id="userId" placeholder="User123">
+                </div>
+                <div class="ingresar__correo correo">
+                    <label for="ID">ID</label>
+                    <input class="correo__input input" type="text" name="ID" id="ID" placeholder="User123">
+                </div>
+                <!-- Botones -->
+                <div class="input__botones botones">                    
+                    <button id="btnEnviar">Iniciar sesión</button>
+                </div>
+            </div>
+        </form>
+    </main>
     </form>
+    <script src="main.js"></script>
 </body>
 </html>
