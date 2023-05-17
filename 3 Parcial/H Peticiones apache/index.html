@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <main class="main">
+        <form class="main__form form">
+            <div class="form__titulo titulo">
+                <h2>Bienvenido!</h2>
+                <p>Ingresa tus datos</p>
+            </div>
+            <div class="form__input input">
+                <!-- ID -->
+                <div class="ingresar__correo correo">
+                    <label for="idJugador">idJugador</label>
+                    <input class="correo__input input" type="text"  id="idJugador" placeholder="idJugador">
+                </div>
+                <!-- Nombre -->
+                <div class="ingresar__correo correo">
+                    <label for="nombre">Nombre</label>
+                    <input class="correo__input input" type="text"  id="nombre" placeholder="Nombre">
+                </div>
+                <!-- Apellido -->
+                <div class="ingresar__correo correo">
+                    <label for="apellidos">Apellidos</label>
+                    <input class="correo__input input" type="text"  id="apellidos" placeholder="Apellidos">
+                </div>
+                <!-- Fecha Nac -->
+                <div class="ingresar__correo correo">
+                    <label for="ID">ID</label>
+                    <input class="correo__input input" type="text" name="ID" id="ID" placeholder="10-10-10">
+                </div>
+                <!-- Botones -->
+                <div class="input__botones botones">                    
+                    <button id="btnPeticion">Peticion</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
