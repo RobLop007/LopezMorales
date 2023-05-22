@@ -15,7 +15,7 @@
     width: 50%;  
     height: 100%;
     display: flex;
-    padding: 100px;
+    padding: 75px;
     flex-direction: column;
     border: 5px rgb(221, 186, 69);
 }
@@ -29,7 +29,7 @@
 .ingresar__correo{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .nombre__input{
@@ -82,19 +82,7 @@
     flex-direction: column;        
 }
 
-.input__botones > h5{
-    flex-direction: column;   
-    text-align: right;    
-    margin-bottom: 10px;
-}
-
-h5 > a{
-    outline: none;
-    text-decoration: none;
-    padding: 2px 1px 0;
-}
-
-#btnPeticion{
+button{
     height: 100%;
     height: 35px;
     border-radius: 5px;
@@ -105,7 +93,7 @@ h5 > a{
     font-size: medium;
 }
 
-#btnGoogle{
+/* #btnGoogle{
     height: 100%;
     height: 35px;
     border-radius: 5px;
@@ -117,8 +105,7 @@ h5 > a{
     align-items: center;
     justify-content: center;
     font-size: 14px;
-
-}
+} */
 
 .fotoGoogle{
     width: 25px;
