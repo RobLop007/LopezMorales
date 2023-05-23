@@ -5,7 +5,6 @@ const  mysql = require('mysql');
 
 app.use(cors());
 app.use(express.json());
-let port = 8080
 
 //PETICION
 app.get('/jugador', (req, res) => {
@@ -83,5 +82,5 @@ conexion.end();
 
 
 app.listen(8080, () => {
-  console.log(`Example app listening on port http://localhost:${port}`);
+  console.log(`Example app listening on port`);
 });

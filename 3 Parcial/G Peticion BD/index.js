@@ -31,5 +31,5 @@ app.post('/jugador', (req, res) => {
 });
 
 app.listen(8085, () => {
-  console.log(`Example app listening on port`);
+  console.log(`Example app listening on http://localhost:${port}`);
 });
