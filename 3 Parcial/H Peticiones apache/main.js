@@ -40,13 +40,53 @@ window.onload=function(){
             });
     });
     //AGREGAR
-    document.getElementById("btnAgregar").addEventListener("click", function(e){
-        e.preventDefault();    
-        fetch('http://localhost:8080/jugador')
-        .then(respuesta => respuesta.json())
-            .then(objetoJugador => {
-                document.getElementById("idJugador").value = objetoJugador[idJugador].idJugador;
+    document.getElementById("btnAgregar").addEventListener("click", async function(e){
+        e.preventDefault();   
+        let headerList = {
+            "Acept":"*/*",
+            "Content-Type":"aplication/json"
+        }
 
-            });
+        let contentBody = JSON.stringify ({
+            "nombre": document.getElementById("nombre").value,
+            "apellidos": document.getElementById("apellidos").value,
+            "fechaN": document.getElementById("fechaN").value,
+            "playera": document.getElementById("playera").value,
+            "equipo": document.getElementById("equipo").value
+        });
+        
+        let respuesta =await fetch ('http://localhost:8080/jugador/'+document.getElementById("idJugador").value{
+            method:"POST",
+            body: contentBody,
+            header: headerList
+        })
+        let datoJson = await respuesta.json();
+        alert(datoJson.resultao);
+        
+    });
+    //MODIFICAR
+    document.getElementById("btnAgregar").addEventListener("click", async function(e){
+        e.preventDefault();   
+        let headerList = {
+            "Acept":"*/*",
+            "Content-Type":"aplication/json"
+        }
+
+        let contentBody = JSON.stringify ({
+            "nombre": document.getElementById("nombre").value,
+            "apellidos": document.getElementById("apellidos").value,
+            "fechaN": document.getElementById("fechaN").value,
+            "playera": document.getElementById("playera").value,
+            "equipo": document.getElementById("equipo").value
+        });
+        
+        let respuesta = await fetch ('http://localhost:8080/jugador/'+document.getElementById("idJugador").value{
+            method:"PUT",
+            body: contentBody,
+            header: headerList
+        })
+        let datoJson = await respuesta.json();
+        alert(datoJson.resultao);
+        
     });
 }
