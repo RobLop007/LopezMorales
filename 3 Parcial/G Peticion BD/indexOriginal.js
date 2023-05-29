@@ -64,6 +64,7 @@ app.post('/jugador', (req, res) => {
     password  : '',
     database  : 'ejemploweb'
   });
+  
   let miInsert = "INSERT INTO jugador (nombre, apellidos, fechaN, playera, equipo)  VALUES ("+                                    
                                     "'" + req.body.nombre + "',"   +
                                     "'" + req.body.apellidos + "'," +
