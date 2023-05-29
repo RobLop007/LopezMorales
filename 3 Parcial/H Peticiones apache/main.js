@@ -48,11 +48,11 @@ window.onload=function(){
         }
 
         let contentBody = JSON.stringify ({
-            "nombre": document.getElementById("nombre").value,
-            "apellidos": document.getElementById("apellidos").value,
-            "fechaN": document.getElementById("fechaN").value,
-            "playera": document.getElementById("playera").value,
-            "equipo": document.getElementById("equipo").value
+            nombre: document.getElementById("nombre").value,
+            apellidos: document.getElementById("apellidos").value,
+            fechaN: document.getElementById("fechaN").value,
+            playera: document.getElementById("playera").value,
+            equipo: document.getElementById("equipo").value
         });
         console.log(contentBody);
         let respuesta =await fetch ('http://localhost:8080/jugador/',{
