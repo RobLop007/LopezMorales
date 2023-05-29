@@ -54,8 +54,8 @@ window.onload=function(){
             "playera": document.getElementById("playera").value,
             "equipo": document.getElementById("equipo").value
         });
-        
-        let respuesta =await fetch ('http://localhost:8080/jugador/'+document.getElementById("idJugador").value{
+        console.log(contentBody);
+        let respuesta =await fetch ('http://localhost:8080/jugador/',{
             method:"POST",
             body: contentBody,
             header: headerList
@@ -65,7 +65,7 @@ window.onload=function(){
         
     });
     //MODIFICAR
-    document.getElementById("btnAgregar").addEventListener("click", async function(e){
+    document.getElementById("btnActualizar").addEventListener("click", async function(e){
         e.preventDefault();   
         let headerList = {
             "Acept":"*/*",
@@ -80,7 +80,7 @@ window.onload=function(){
             "equipo": document.getElementById("equipo").value
         });
         
-        let respuesta = await fetch ('http://localhost:8080/jugador/'+document.getElementById("idJugador").value{
+        let respuesta = await fetch ('http://localhost:8080/jugador/'+document.getElementById("idJugador").value,{
             method:"PUT",
             body: contentBody,
             header: headerList
