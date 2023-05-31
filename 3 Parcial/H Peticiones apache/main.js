@@ -48,6 +48,7 @@ window.onload=function(){
         }
 
         let contentBody = JSON.stringify ({
+            idJugador: document.getElementById("idJugador").value,
             nombre: document.getElementById("nombre").value,
             apellidos: document.getElementById("apellidos").value,
             fechaN: document.getElementById("fechaN").value,
@@ -55,7 +56,7 @@ window.onload=function(){
             equipo: document.getElementById("equipo").value
         });
         console.log(contentBody);
-        let respuesta =await fetch ('http://localhost:8080/jugador/',{
+        let respuesta = await fetch ('http://localhost:8080/jugador/',{
             method:"POST",
             body: contentBody,
             header: headerList
@@ -80,7 +81,7 @@ window.onload=function(){
             "equipo": document.getElementById("equipo").value
         });
         
-        let respuesta = await fetch ('http://localhost:8080/jugador/'+document.getElementById("idJugador").value,{
+        let respuesta = await fetch ('http://localhost:8080/jugador/'+ document.getElementById("idJugador").value,{
             method:"PUT",
             body: contentBody,
             header: headerList

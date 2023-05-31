@@ -65,12 +65,13 @@ app.post('/jugador', (req, res) => {
     database  : 'ejemploweb'
   });
   
-  let miInsert = "INSERT INTO jugador (nombre, apellidos, fechaN, playera, equipo)  VALUES ("+                                    
+  let miInsert = "INSERT INTO jugador (idJugador, nombre, apellidos, fechaN, playera, equipo)  VALUES ("+                                    
+                                    "'" + req.body.idJugador + "',"   +
                                     "'" + req.body.nombre + "',"   +
                                     "'" + req.body.apellidos + "'," +
                                     "'" + req.body.fechaN + "',"    +
                                     "'" + req.body.playera + "',"   +
-                                    "'" + req.body.equipo + "')";
+                                    "'" + req.body.equipo + "');";
   console.log(miInsert);
   conexion.connect();
   conexion.query(miInsert, function(error, results, fields){
