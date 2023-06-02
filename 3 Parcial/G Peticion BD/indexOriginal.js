@@ -2,10 +2,12 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const  mysql = require('mysql');
+const bodyParse = require('body-parser')
 
 app.use(cors());
+app.use(bodyParse.json())
 app.use(express.json());
-let port = 8080
+let port = 8085
 
 //PETICION
 app.get('/jugador', (req, res) => {
@@ -72,16 +74,18 @@ app.post('/jugador', (req, res) => {
                                     "'" + req.body.fechaN + "',"    +
                                     "'" + req.body.playera + "',"   +
                                     "'" + req.body.equipo + "');";
-  console.log(miInsert);
   conexion.connect();
   conexion.query(miInsert, function(error, results, fields){
   if (error) return res.json(error);
-  else{console.log(results);
-          res.json(results);}      
+  else{
+    console.log(results);
+    res.json(results);
+  }      
     res.json(results);
   })
 conexion.end();
 }); 
+
 //ACTUALIZAR
 app.put('/jugador/idJugador', (req, res) => {
   var conexion = mysql.createConnection({
@@ -90,22 +94,33 @@ app.put('/jugador/idJugador', (req, res) => {
     password  : '',
     database  : 'ejemploweb'
   });
-  let miInsert = "UPDATE jugador SET (nombre = '" + req.body.nombre +"', " + 
-                                    "apellidos ='"+ req.body.apellidos +"',"+
-                                     "fechaN = '"+    req.body.fechaN +"',"+ 
-                                     "playera ='"+   req.body.playera +"',"+
-                                      "equipo ='"+   req.body.equipo +"',"+
-                                      "WHERE idJugador="+req.body.idJugador;
+  
+  console.log(req.params);
+  console.log(req.body);
+  let miInsert = "UPDATE jugador SET nombre = '" + req.body.nombre + "', " +
+                                      "apellidos = '" + req.body.apellidos + "', " +
+                                      "fechaN = '" + req.body.fechaN + "', " +
+                                      "playera = '" + req.body.playera + "', " +
+                                      "equipo = '" + req.body.equipo + "' " +
+                                      "WHERE idJugador = " + req.params.idJugador;
+  
   console.log(miInsert);
+  
   conexion.connect();
-  conexion.query(miInsert, function(error, results, fields){
-  if (error) return res.json(error);
-  else{console.log(results);
-          res.json(results);}      
-    res.json(results);
-  })
-conexion.end();
-}); 
+  conexion.query(miInsert, function(error, results, fields) {
+    if (error) {
+      console.log(error);
+      return res.json(error);
+    }
+    else {
+      console.log(results);
+      res.json(results);
+    }
+  });
+
+  conexion.end();
+});
+
 
 
 app.listen(8080, () => {
