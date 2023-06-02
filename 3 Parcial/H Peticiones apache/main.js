@@ -74,14 +74,14 @@ window.onload=function(){
 
         let idJugador = document.getElementById("idJugador").value;
         
-        let respuesta = await fetch ('http://localhost:8080/jugador/' + idJugador,{
+        let respuesta = await fetch('http://localhost:8080/jugador/' + idJugador,{
             method:"PUT",
             body: JSON.stringify(contentBody),
-            header: headerList
+            headers: headerList
         })
         let datoJson = await respuesta.json();
         console.log(datoJson);
-        alert(datoJson);
+        alert("Jugador agregado");
         
     });
 }

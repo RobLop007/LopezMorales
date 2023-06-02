@@ -7,7 +7,7 @@ const bodyParse = require('body-parser')
 app.use(cors());
 app.use(bodyParse.json())
 app.use(express.json());
-let port = 8085
+let port = 8080
 
 //PETICION
 app.get('/jugador', (req, res) => {
@@ -87,7 +87,7 @@ conexion.end();
 }); 
 
 //ACTUALIZAR
-app.put('/jugador/idJugador', (req, res) => {
+app.put('/jugador/:idJugador', (req, res) => {
   var conexion = mysql.createConnection({
     host      : 'localhost',
     user      : 'root',
@@ -105,7 +105,6 @@ app.put('/jugador/idJugador', (req, res) => {
                                       "WHERE idJugador = " + req.params.idJugador;
   
   console.log(miInsert);
-  
   conexion.connect();
   conexion.query(miInsert, function(error, results, fields) {
     if (error) {
@@ -117,12 +116,11 @@ app.put('/jugador/idJugador', (req, res) => {
       res.json(results);
     }
   });
-
   conexion.end();
 });
 
 
 
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}`);
 });
