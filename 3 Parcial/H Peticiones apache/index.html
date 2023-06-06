@@ -7,65 +7,57 @@
     <link rel="stylesheet" href="estilos.css">
     <title>Formulario</title>
 </head>
-<body>
-    <main class="main">
-        <form class="main__form form">
-            <div class="form__titulo titulo">
-                <h2>Bienvenido!</h2>
-                <p>Ingresa tus datos</p>
-            </div>
-            <div class="form__input input">
+<body>    
+    <main class="main">     
+        <form class="main_form">                        
+            <div class="form_input">
+                <div class="form_titulo">
+                    <h2>Bienvenido!</h2>
+                    <p>Ingresa tus datos</p>
+                </div>
                 <!-- ID -->
-                <div class="ingresar__correo correo">
+                <div class="ingresar_correo">
                     <label for="idJugador">idJugador</label>
-                    <input class="correo__input input" type="text"  id="idJugador" placeholder="idJugador">
+                    <input class="correo_input" type="text"  id="idJugador" placeholder="idJugador">
                 </div>
                 <!-- Nombre -->
-                <div class="ingresar__correo correo">
+                <div class="ingresar_correo">
                     <label for="nombre">Nombre</label>
-                    <input class="correo__input input" type="text"  id="nombre" placeholder="Nombre">
+                    <input class="correo_input" type="text"  id="nombre" placeholder="Nombre">
                 </div>
                 <!-- Apellido -->
-                <div class="ingresar__correo correo">
+                <div class="ingresar_correo">
                     <label for="apellidos">Apellidos</label>
-                    <input class="correo__input input" type="text"  id="apellidos" placeholder="Apellidos">
+                    <input class="correo_input" type="text"  id="apellidos" placeholder="Apellidos">
                 </div>
                 <!-- Fecha Nac -->
-                <div class="ingresar__correo correo">
+                <div class="ingresar_correo">
                     <label for="fecha">Fecha de Nacimeinto</label>
-                    <input class="correo__input input" type="text" name="fecha" id="fechaN" placeholder="10-10-10">
+                    <input class="correo_input" type="text" name="fecha" id="fechaN" placeholder="yyyy-mm-dd">
                 </div>
                 <!-- Playera -->
-                <div class="ingresar__correo correo">
+                <div class="ingresar_correo">
                     <label for="playera">Playera</label>
-                    <input class="correo__input input" type="text" name="playera" id="playera" placeholder="10">
+                    <input class="correo_input" type="text" name="playera" id="playera" placeholder="10">
                 </div>
                 <!-- Equipo -->
-                <div class="ingresar__correo correo">
+                <div class="ingresar_correo correo">
                     <label for="equipo">Equipo</label>
-                    <input class="correo__input input" type="text" name="equipo" id="equipo" placeholder="Dogers">
-                </div>                
-            </div>
+                    <input class="correo_input" type="text" name="equipo" id="equipo" placeholder="Dogers">
+                </div>
+                <!-- Botones -->
+                <div class="ingresar_correo">
+                    <div class="input_botones">
+                        <button id="btnAgregar">Agregar</button>                
+                        <button id="btnActualizar">Actualizar</button>                                          
+                        <button id="btnBuscar">Buscar</button>                            
+                        <button id="btnEliminar">Eliminar</button>                    
+                </div>
+            </div>     
+               
         </form>
-        <!-- Botones -->
-        <div class="form__input">
-            <div class="input__botones botones">
-                <button id="btnAgregar">Agregar</button>
-            </div>
-            <div class="input__botones botones">
-                <button id="btnActualizar">Actualizar</button>
-            </div>            
-            <div class="input__botones botones">
-                <button id="btnBuscar">Buscar</button>
-            </div>
-            <div class="input__botones botones">
-                <button id="btnEliminar">Eliminar</button>
-            </div>
-            <div class="input__botones botones">
-                <button id="btnLimpiar">Limpiar</button>
-            </div>
-        </div>
+        
     </main>
-    <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

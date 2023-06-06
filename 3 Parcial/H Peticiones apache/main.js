@@ -15,7 +15,8 @@ window.onload=function(){
                 document.getElementById("fechaN").value = objetoJugador[0].fechaN;
                 document.getElementById("playera").value = objetoJugador[0].playera;
                 document.getElementById("equipo").value = objetoJugador[0].equipo;
-            })
+            })            
+            alert("Jugador " + idJugador + " encontrado")
     });
     //ELIMINAR
     document.getElementById("btnEliminar").addEventListener("click", function(e){
@@ -25,8 +26,15 @@ window.onload=function(){
         fetch('http://localhost:8080/jugador/' + idJugador, {method: 'DELETE'})
         .then(respuesta => respuesta.json())
             .then(objetoJugador => {
+                document.getElementById("idJugador").value = "";
+                document.getElementById("nombre").value = "";
+                document.getElementById("apellidos").value = "";
+                document.getElementById("fechaN").value = "";
+                document.getElementById("playera").value = "";
+                document.getElementById("equipo").value = "";
                 console.log(objetoJugador);                
             });
+        alert("Jugador eliminado");
     });
     //AGREGAR
     document.getElementById("btnAgregar").addEventListener("click", async function(e){
@@ -52,10 +60,20 @@ window.onload=function(){
         })
         let datoJson = await respuesta.json();
         console.log(datoJson);
-        alert("Jugador agregado");
-        
+        if(datoJson.code == 'ER_DUP_ENTRY'){
+            alert("No se puede AGREGAR el jugador, este idJugador ya existe");
+        }
+        if(datoJson.code == 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD'){
+            alert("No se puede AGREGAR, hay campos vacios");
+        }
+        if(datoJson.code == 'ER_TRUNCATED_WRONG_VALUE'){
+            alert("No se puede AGREGAR, el valor de la fecha no es el correcto");
+        }
+        if(datoJson.affectedRows == 1) {
+            alert("Jugador agregado");    
+        }            
     });
-    //MODIFICAR
+    //ACTUALIZAR
     document.getElementById("btnActualizar").addEventListener("click", async function(e){
         e.preventDefault();   
         let headerList = {
@@ -81,7 +99,15 @@ window.onload=function(){
         })
         let datoJson = await respuesta.json();
         console.log(datoJson);
-        alert("Jugador agregado");
-        
+        if(datoJson.code == 'ER_DUP_ENTRY'){
+            alert("No se puede ACTUALIZAR");
+        }
+        if(datoJson.code == 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD'){
+            alert("No se puede ACTUALIZAR, hay campos vacios");
+        }
+        if(datoJson.code == 'ER_TRUNCATED_WRONG_VALUE'){
+            alert("No se puede ACTUALIZAR, el valor de la fecha no es el correcto");
+        }
+        else alert("Los datos fueron ACTUALIZADOS");        
     });
 }
